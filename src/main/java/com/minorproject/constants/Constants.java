@@ -1,4 +1,4 @@
-package com.minorproject;
+package com.minorproject.constants;
 
 public class Constants {
     public static final String CHOOSE_COLOR = "Choose Color";
