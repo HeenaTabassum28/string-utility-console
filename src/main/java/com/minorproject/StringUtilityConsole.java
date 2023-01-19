@@ -9,15 +9,17 @@ import static com.minorproject.constants.Constants.*;
 import static com.minorproject.util.StringUtil.countWords;
 
 
-public class CharCount extends JFrame implements ActionListener {
+public class StringUtilityConsole extends JFrame implements ActionListener {
     JLabel charactersLabel;
     JLabel wordsLabel;
     JTextArea textArea;
     JButton countButton;
     JButton padColorButton;
     JButton textColorButton;
+    JButton upperCaseButton;
+    JButton lowerCaseButton;
 
-    CharCount() {
+    StringUtilityConsole() {
         super(TITLE);
 
         charactersLabel = new JLabel(NO_OF_CHARACTERS);
@@ -41,14 +43,32 @@ public class CharCount extends JFrame implements ActionListener {
         textColorButton.setBounds(260, 320, 110, 30);
         textColorButton.addActionListener(this);
 
+        upperCaseButton = new JButton(UPPER_CASE);
+        upperCaseButton.setBounds(400, 320, 110, 30);
+        upperCaseButton.addActionListener(this);
+
+        lowerCaseButton = new JButton(LOWER_CASE);
+        lowerCaseButton.setBounds(550, 320, 110, 30);
+        lowerCaseButton.addActionListener(this);
+
+        addComponentsToContainer();
+
+        setFrameProperties();
+    }
+
+    private void addComponentsToContainer() {
         add(charactersLabel);
         add(wordsLabel);
         add(textArea);
         add(countButton);
         add(padColorButton);
         add(textColorButton);
+        add(upperCaseButton);
+        add(lowerCaseButton);
+    }
 
-        setSize(400, 400);
+    private void setFrameProperties() {
+        setSize(700, 600);
         setLayout(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -63,6 +83,10 @@ public class CharCount extends JFrame implements ActionListener {
             textArea.setBackground(JColorChooser.showDialog(this, CHOOSE_COLOR, Color.BLACK));
         } else if (e.getSource() == textColorButton) {
             textArea.setForeground(JColorChooser.showDialog(this, CHOOSE_COLOR, Color.BLACK));
+        } else if (e.getSource() == upperCaseButton) {
+            textArea.setText(textArea.getText().toUpperCase());
+        } else if (e.getSource() == lowerCaseButton) {
+            textArea.setText(textArea.getText().toLowerCase());
         }
     }
 
