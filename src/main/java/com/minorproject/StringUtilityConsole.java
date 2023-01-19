@@ -29,26 +29,26 @@ public class StringUtilityConsole extends JFrame implements ActionListener {
         wordsLabel.setBounds(50, 80, 100, 20);
 
         textArea = new JTextArea();
-        textArea.setBounds(50, 110, 300, 200);
+        textArea.setBounds(50, 110, 320, 200);
 
         countButton = new JButton(COUNT);
         countButton.setBounds(50, 320, 80, 30);
         countButton.addActionListener(this);
 
         padColorButton = new JButton(PAD_COLOR);
-        padColorButton.setBounds(140, 320, 110, 30);
+        padColorButton.setBounds(80, 360, 110, 30);
         padColorButton.addActionListener(this);
 
         textColorButton = new JButton(TEXT_COLOR);
-        textColorButton.setBounds(260, 320, 110, 30);
+        textColorButton.setBounds(200, 360, 110, 30);
         textColorButton.addActionListener(this);
 
         upperCaseButton = new JButton(UPPER_CASE);
-        upperCaseButton.setBounds(400, 320, 110, 30);
+        upperCaseButton.setBounds(140, 320, 110, 30);
         upperCaseButton.addActionListener(this);
 
         lowerCaseButton = new JButton(LOWER_CASE);
-        lowerCaseButton.setBounds(550, 320, 110, 30);
+        lowerCaseButton.setBounds(260, 320, 110, 30);
         lowerCaseButton.addActionListener(this);
 
         addComponentsToContainer();
@@ -68,7 +68,7 @@ public class StringUtilityConsole extends JFrame implements ActionListener {
     }
 
     private void setFrameProperties() {
-        setSize(700, 600);
+        setSize(430, 490);
         setLayout(null);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
